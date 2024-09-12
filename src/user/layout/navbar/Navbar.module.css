@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 5rem;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #eeeff3;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+.navItem{
+    margin-right: 2rem;
+}
+.navLink{
+    text-decoration: none;
+    color: #292621;
+    font-size: 14px;
+}
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wishlist{
+    border: none;
+    border-right: 1px solid #eeeff3;
+    padding: 0 15px;
+}
+.order{
+    border: none;
+    border-right: 1px solid #eeeff3;
+    padding: 0 20px;
+}
+.social{
+    padding: 0 15px;
+}
+.Social{
+    margin-right: 15px;
+    color: #74716c;
+    transition: transform .3s ease;
+}
+.Social:hover{
+    color: red;
+    transform: rotateY(180deg);
+}
