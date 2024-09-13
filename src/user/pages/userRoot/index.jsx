@@ -1,10 +1,12 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Home from '../home/Home'
+import Navbar from '../../layout/navbar/Navbar'
+import Header from '../../layout/header/header'
 function UserRoot() {
     return (
         <div>
-            <Home />
+            <Navbar />
+            <Header />
             <Outlet />
         </div>
     )

@@ -1,0 +1,91 @@
+.Card{
+    overflow: hidden;
+    width: 95%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.CardBody{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction:column;
+}
+.cardImage{
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+.Card:hover .cardImage {
+    transform: scale(1.05); 
+}
+.CardBody a{
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    color: #292621;
+    font-size: 16px;
+    font-weight: 400;
+    transition: color .2s linear;
+    margin-bottom: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+.Card:hover a{
+    color: red;
+}
+.Card:hover .with{
+    color: #292621;
+}
+.price{
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.with{
+    color: #74716c;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color .2s linear;
+}
+.without{
+    color: #CEBD9C;
+    text-decoration: line-through;
+    margin: 0;
+    margin-left: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+}
+.tools{
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    cursor: pointer;
+    color: #292621;
+    background-color: #fff;
+    font-weight: 600;
+    opacity: 0;
+    transition: all .3s linear;
+}
+.tool{
+    padding: .5rem 1rem;
+    transition: background-color .3s linear; 
+    transition: color .4s linear;
+    font-size: 30px;
+}
+.tool:hover{
+    background-color: red;
+    color: #FFF;
+}
+.Card:hover .tools{
+    opacity: 1;
+    bottom: 85;
+}
