@@ -84,3 +84,75 @@
 .customRightArrow:hover, .customLeftArrow:hover{
     background-color: rgba(0, 0, 0, 0.9);
 }
+
+
+.testimonial {
+    margin-top: 7rem;
+    background-color: #F3EAD8;
+    padding: 80px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.innerContainer {
+    max-width: 800px; 
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.testimonial h1 {
+    font-family: "Jost", sans-serif;
+    font-size: 34px;
+    color: #292621;
+    margin-bottom: 30px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.testimonial p {
+    font-size: 18px;
+    color: #292621;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.profile {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text {
+    text-align: left;
+}
+
+.authorName {
+    font-size: 1.2rem;
+    color: #302f2b;
+    font-weight: bold;
+}
+
+.specialty {
+    font-size: 0.9rem;
+    color: #76726f;
+    margin-top: 0.2rem;
+}

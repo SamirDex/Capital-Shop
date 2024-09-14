@@ -6,7 +6,10 @@ import Card from '../../components/Card';
 import { data } from "../../../data/Data"
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
-
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
+import { testimonials } from '../../../data/Data';
 
 const CustomLeftArrow = ({ onClick }) => {
     return (
@@ -16,7 +19,6 @@ const CustomLeftArrow = ({ onClick }) => {
     );
 };
 
-// Özel Sağ Ok
 const CustomRightArrow = ({ onClick }) => {
     return (
         <button className={styles.customRightArrow} onClick={onClick}>
@@ -45,6 +47,17 @@ const responsive = {
 
 
 function Trend() {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000, 
+        arrows: true, 
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.header}>
@@ -70,7 +83,7 @@ function Trend() {
             </div>
             
             <div className={styles.cardContainer}>
-                <Carousel responsive={responsive} infinite={true} autoPlay={true} autoPlaySpeed={3000} pauseOnHover={true} customLeftArrow={<CustomLeftArrow />} customRightArrow={<CustomRightArrow />}>
+                <Carousel responsive={responsive} infinite={true} autoPlay={true} autoPlaySpeed={2000} pauseOnHover={true} customLeftArrow={<CustomLeftArrow />} customRightArrow={<CustomRightArrow />}>
                     {data && data.map((item, i) => (
                         item.category === "clothes" && (
                             <Card
@@ -83,6 +96,25 @@ function Trend() {
                         )
                     ))}
                 </Carousel>
+            </div>
+            <div className={styles.testimonial}>
+                <Slider {...settings}>
+                    {testimonials && testimonials.map((testimonial, index) => (
+                    <div key={index} className={styles.innerContainer}>
+                        <h1>Customer Testimonial</h1>
+                        <p>{testimonial.text}</p>
+                        <div className={styles.author}>
+                        <div className={styles.profile}>
+                            <img src={testimonial.image} alt={testimonial.name} />
+                        </div>
+                        <div className={styles.text}>
+                            <span className={styles.authorName}>{testimonial.name}</span>
+                            <p className={styles.specialty}>{testimonial.specialty}</p>
+                        </div>
+                        </div>
+                    </div>
+                    ))}
+                </Slider>
             </div>
         </div>
     )
