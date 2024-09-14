@@ -1,0 +1,70 @@
+.container{
+    width: 100%;
+    padding:  0 5rem;
+    margin-bottom: 60px;
+    background-color: #171613;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+.newsletter{
+    padding: 40px 0;
+    margin-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+.header h1{
+    color: #fff;
+    font-family: "Jost", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+.header p{
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.input{
+    display: flex;
+}
+input[type="text"]{
+    width: 25rem;
+    height: 60px;
+    border: 0;
+    color: #000;
+    background: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    padding: 15px 24px;
+    font-size: 16px;
+}
+.input button{
+    width: 24%;
+    height: 60px;
+    border: 0;
+    background: #FF2020;
+    border-radius: 0;
+    padding: 13px 24px;
+    color: #fff;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+.icon{
+    color: #677F8B;
+    font-size: 24px;
+    display: inline-block;
+    text-align: center;
+    margin-left: 23px;
+    transition: all .3s linear;
+}
+.icon:hover{
+    transform: rotateY(180deg);
+    color: #FF2020;
+
+}

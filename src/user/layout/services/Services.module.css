@@ -1,0 +1,35 @@
+.container{
+    width: 100%;
+    display: grid;
+    padding: 5rem 0;
+    grid-template-columns: repeat(4,1fr);
+}
+.service{
+    padding: 0 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    white-space: nowrap;
+    border: none;
+    border-right: 2px solid #f7f7f9;
+}
+.service img{
+    margin-bottom: 26px;
+}
+.service h1{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    display: block;
+    text-transform: capitalize;
+    color: #2B2B2B;
+    font-family: "Jost", sans-serif;
+}
+.service p{
+    color: #57667e;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    line-height: 1.6
+}

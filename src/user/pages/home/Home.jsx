@@ -4,6 +4,7 @@ import Slider from '../../layout/slider/Slider'
 import Trend from '../../layout/trend/Trend'
 import MayLike from '../../layout/mayLike/MayLike'
 import News from '../../layout/News/News'
+import Services from '../../layout/services/Services'
 
 function Home() {
     return (
@@ -13,6 +14,7 @@ function Home() {
             <Trend />
             <MayLike />
             <News />
+            <Services />
         </div>
     )
 }
