@@ -16,7 +16,7 @@ function Header() {
                 <div className={styles.middle}>
                     <ul className={styles.header}>
                         <li className={styles.headerItem}>  
-                            <Link to="/user" className={styles.headerLink}>Home</Link>
+                            <Link to="/" className={styles.headerLink}>Home</Link>
                         </li>
                         <li className={styles.headerItem}>  
                             <Link to="/user" className={styles.headerLink}>Men</Link>
@@ -28,7 +28,7 @@ function Header() {
                             <Link to="/user" className={styles.headerLink}>Baby Collection</Link>
                         </li>
                         <li className={styles.headerItem}>  
-                            <Link to="/user" className={styles.headerLink}>Contact</Link>
+                            <Link to="/contact" className={styles.headerLink}>Contact</Link>
                         </li>
                     </ul>
                 </div>

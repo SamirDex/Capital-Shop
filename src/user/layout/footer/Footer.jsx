@@ -11,7 +11,7 @@ function Footer() {
                     <p>Subscribe newsletter to get 5% on all products.</p>
                 </div>
                 <div className={styles.input}>
-                    <input type="text" placeholder='Enter your email' />
+                    <input type="text" placeholder='Enter your email' className={styles.email}/>
                     <button>Subscribe</button>
                 </div>
                 <div className={styles.social}>

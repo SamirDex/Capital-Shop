@@ -1,0 +1,158 @@
+.container{
+    width: 100%;
+}
+.header{
+    width: 100%;
+    background-color: #f3ebd8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 150px;
+}
+.header h1{
+    color: #292621;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.link{
+    color: #74706B;
+    font-size: 14px;
+    text-transform: capitalize;
+    line-height: 1;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 0 .5rem;
+    border: none;
+}
+.hr {
+    width: 1px; 
+    height: 20px; 
+    font-weight: 600;
+    border: none;
+    border-left: 1px solid #74706B; 
+    transform: rotate(0deg); 
+}
+.links{
+    display: flex;
+}
+.map{
+    width: 100%;
+    padding: 3rem 5rem ;
+}
+.iframe{
+    width: 100%;
+    height: 500px;
+}
+
+
+.form{
+    width: 100%;
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 6rem;
+}
+.form h1{
+    font-size: 27px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #292621;
+}
+.left{
+    width: 60%;
+}
+.right{
+    width: 30%;
+    margin-top: 3rem;
+}
+.contacts{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 2rem
+}
+.icon{
+    margin-right: 15px;
+    font-size: 30px;
+    color: #909195;
+}
+.content h2{
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #2a2a2a;
+}
+.content p{
+    font-family: "Jost", sans-serif;
+    color: #301A22;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #8a8a8a;
+}
+
+form textarea{
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+    border: 1px solid  #f2f3f5;
+    resize: none;
+    font-size: 12px;
+    transition: border-color 0.3s ease;
+    padding: 15px;
+}
+.data::placeholder, 
+textarea::placeholder {
+    color: #999;
+    font-size: 10px;
+    opacity: 1; 
+}
+.data:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.data[type="text"] {
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #f2f3f5;
+    font-size: 12px;
+    transition: border-color 0.3s ease;
+}
+
+.data[type="text"]:focus {
+    outline: none;
+}
+
+button { 
+    background: #fff;
+    color: #FF2020;
+    padding: 18px 44px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 0;
+    border: 1px solid #FF2020;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color:  #FF2020;
+    color: #fff;
+}
+
+.col {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
