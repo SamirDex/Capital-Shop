@@ -11,7 +11,7 @@ function Blog({ name, description, img}) {
                 <p className={styles.upheader}>Fashion Tips</p>
                 <h1>{name}</h1>
                 <p className={styles.description}>{description}</p>
-                <a href="">Read More</a>
+                <a href="" className={styles.blogLink}>Read More</a>
             </div>
         </div>
     )

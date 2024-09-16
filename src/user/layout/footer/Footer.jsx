@@ -21,8 +21,97 @@ function Footer() {
                 </div>
 
             </div>
-            <div className={styles.links}></div>
-            <div className={styles.copyright}></div>
+            <div className={styles.links}>
+                <div className={styles.logo}>
+                    <img src="https://preview.colorlib.com/theme/capitalshop/assets/img/logo/logo2_footer.png" alt="" />
+                </div>
+                <div className={styles.footerTitle}>
+                    <h4>Shop Men</h4>
+                    <ul className={styles.nav}>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Clothing Fashion</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Winter</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Summer</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Formal</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Casual</a>
+                        </li>
+                    </ul>
+                </div>
+                <div className={styles.footerTitle}>
+                    <h4>Shop Women</h4>
+                    <ul className={styles.nav}>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Clothing Fashion</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Winter</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Summer</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Formal</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Casual</a>
+                        </li>
+                    </ul>
+                </div>
+                <div className={styles.footerTitle}>
+                    <h4>Baby Collection</h4>
+                    <ul className={styles.nav}>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Clothing Fashion</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Winter</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Summer</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Formal</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Casual</a>
+                        </li>
+                    </ul>
+                </div>
+                <div className={styles.footerTitle}>
+                    <h4>Quick Links</h4>
+                    <ul className={styles.nav}>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Track Your Order</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Support</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>FAQ</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Carrier</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>About</a>
+                        </li>
+                        <li className={styles.navItem}>
+                            <a href="#" className={styles.navLinks}>Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className={styles.copyright}>
+                <p className={styles.content}>Copyright ©2024 All rights reserved | This template is made with Samir Habibov by Colorlib</p>
+            </div>
         </div>
     )
 }
