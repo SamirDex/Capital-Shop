@@ -1,0 +1,97 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.box{
+    min-width: 700px;
+    background-color: #fff;
+    padding: 55px 60px 50px 50px;
+    box-shadow: 0px 10px 30px 0px rgba(13, 12, 13, 0.2);
+}
+.header{
+    text-align: center;
+}
+.header h1{
+    color: #140C40;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+    text-transform: capitalize;
+}
+.header p{
+    color: #301A22;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.row{
+    margin-top: 20px;
+}
+.row label{
+    display: block;
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #140C40;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: left;
+}
+.LoginInput {
+    border: 1px solid #C9C9C9;
+    width: 100%;
+    height: 50px;
+    padding: 0 25px;
+    color: #000;
+}
+.LoginInput::placeholder{
+    color: #777777;
+}
+.LoginInput:focus::placeholder{
+    color: transparent;
+}
+.LoginInput:focus{
+    outline: none;
+}
+.formFooter{
+    margin-top: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.checkbox{
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.checkboxGroup label{
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #140C40;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: left;
+    margin-left:5px ;
+}
+.Link{
+    text-decoration: none;
+    color: #FF2020;
+    font-size: 14px;
+    font-weight: 400;
+}
+.account{
+    background: #FF2020;
+    height: 60px;
+    padding: 10px 43px;
+    border: 0;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0px;
+}

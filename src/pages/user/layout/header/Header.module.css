@@ -33,6 +33,9 @@
     transition: all .3s ease;
     cursor: pointer;
 }
+.Linkicon{
+    color: #16151a;
+}
 .icon:hover{
     color: red;
 }

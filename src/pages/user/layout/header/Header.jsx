@@ -34,7 +34,9 @@ function Header() {
                 </div>
                 <div className={styles.right}>
                     <CiSearch className={styles.icon}/>
-                    <LuUser2 className={styles.icon}/>
+                    <Link to="/login" className={styles.Linkicon}>
+                        <LuUser2 className={styles.icon}/>
+                    </Link>
                     <SlBasket className={styles.icon}/>
                 </div>
             </div>
