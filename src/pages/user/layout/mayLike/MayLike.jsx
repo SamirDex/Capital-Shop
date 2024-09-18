@@ -3,7 +3,7 @@ import styles from "./MayLike.module.css"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from '../../components/Card';
-import { data } from "../../../data/Data"
+import { data } from "../../../../data/Data"
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 

@@ -6,11 +6,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import styles from "./Slider.module.css"
-import hero1 from "../../../images/h1_hero1.jpg"
-import hero2 from "../../../images/h1_hero2.jpg"
-import item1 from "../../../images/items1.jpg"
-import item2 from "../../../images/items2.jpg"
-import item3 from "../../../images/items3.jpg"
+import hero1 from "../../../../images/h1_hero1.jpg"
+import hero2 from "../../../../images/h1_hero2.jpg"
+import item1 from "../../../../images/items1.jpg"
+import item2 from "../../../../images/items2.jpg"
+import item3 from "../../../../images/items3.jpg"
 
 function Slider() {
     return (

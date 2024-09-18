@@ -3,13 +3,13 @@ import styles from "./Trend.module.css"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from '../../components/Card';
-import { data } from "../../../data/Data"
+import { data } from "../../../../data/Data"
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-import { testimonials } from '../../../data/Data';
+import { testimonials } from '../../../../data/Data';
 
 const CustomLeftArrow = ({ onClick }) => {
     return (

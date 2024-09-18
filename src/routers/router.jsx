@@ -1,7 +1,7 @@
-import AdminRoot from "../admin/adminRoot";
-import Contact from "../user/pages/contact/Contact";
-import Home from "../user/pages/home/Home"; 
-import UserRoot from "../user/pages/userRoot";
+// import AdminRoot from "../admin/adminRoot";
+import Contact from "../pages/contact/Contact";
+import Home from "../pages/home/Home"; 
+import UserRoot from "../pages/user/userRoot";
 
 export const routes = [
     {

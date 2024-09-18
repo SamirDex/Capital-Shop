@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./Header.module.css"
 import { Link } from 'react-router-dom'
-import logo from "../../../images/logo.png"
+import logo from "../../../../images/logo.png"
 import { CiSearch } from "react-icons/ci";
 import { LuUser2 } from "react-icons/lu";
 import { SlBasket } from "react-icons/sl";
