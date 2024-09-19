@@ -35,7 +35,7 @@ function Header() {
                 </div>
             </div>
             <div className={styles.discount}>
-                Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer <Link className={styles.shop}>Shop Now</Link>
+                Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer <Link className={styles.shop} to='/products'>Shop Now</Link>
             </div>
 
         </>

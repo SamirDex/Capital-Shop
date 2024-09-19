@@ -21,6 +21,11 @@
     transition: transform 0.4s linear;
     object-fit: contain;
 }
+.CardLink{
+    text-align: left !important;
+    margin-left: 1rem;
+    height: 2rem;
+}
 .Card:hover .cardImage {
     transform: scale(1.05); 
 }
@@ -93,4 +98,7 @@
 .Card:hover .tools{
     opacity: 1;
     bottom: 85;
+}
+.DetailLink{
+    text-decoration: none;
 }

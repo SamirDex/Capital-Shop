@@ -3,32 +3,35 @@ import styles from "./Card.module.css"
 import { PiShoppingCartLight } from "react-icons/pi";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 function Card({ name, price, withoutDiscount, img }) {
     return (
         <div className={styles.Card}>
-            <div className={styles.tools}>
-                <div className={styles.tool}>
-                    <PiShoppingCartLight />
+            <Link className={styles.DetailLink}>
+                <div className={styles.tools}>
+                    <div className={styles.tool}>
+                        <PiShoppingCartLight />
+                    </div>
+                    <div className={styles.tool}>
+                        <IoIosHeartEmpty />
+                    </div>
+                    <div className={styles.tool}>
+                        <IoIosSearch />
+                    </div>
                 </div>
-                <div className={styles.tool}>
-                    <IoIosHeartEmpty />
+                <div className={styles.cardName}>
+                    <img src={img} alt=""  className={styles.cardImage}/>
                 </div>
-                <div className={styles.tool}>
-                    <IoIosSearch />
+                <div className={styles.CardBody}>
+                    <a href='' className={styles.CardLink}>{name}</a>
+                    <div className={styles.price}>
+                        <div className={styles.with}>${price} </div>
+                        <div className={styles.without}>${withoutDiscount}</div>
+                    </div>
                 </div>
-            </div>
-            <div className={styles.cardName}>
-                <img src={img} alt=""  className={styles.cardImage}/>
-            </div>
-            <div className={styles.CardBody}>
-                <a href='' className={styles.CardLink}>{name}</a>
-                <div className={styles.price}>
-                    <div className={styles.with}>${price} </div>
-                    <div className={styles.without}>${withoutDiscount}</div>
-                </div>
-            </div>
+            </Link>
         </div>
     )
 }
