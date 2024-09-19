@@ -25,8 +25,8 @@ function Card({ name, price, withoutDiscount, img }) {
             <div className={styles.CardBody}>
                 <a href='' className={styles.CardLink}>{name}</a>
                 <div className={styles.price}>
-                    <div className={styles.with}>${price}.00 </div>
-                    <div className={styles.without}>${withoutDiscount}.00</div>
+                    <div className={styles.with}>${price} </div>
+                    <div className={styles.without}>${withoutDiscount}</div>
                 </div>
             </div>
         </div>

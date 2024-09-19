@@ -108,3 +108,5 @@ export const news = [
         img: "https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/blog3.jpg",
     },
 ]
+
+export const base_url = "https://66bf2b3142533c4031454a0a.mockapi.io/data/"; 

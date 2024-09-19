@@ -1,0 +1,46 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.header{
+    font-size: 24px;
+    color: #333333;
+    margin: 20px 0;
+}
+.error{
+    font-size: 96px;
+    font-weight: bold;
+    color: #FF5722;
+}
+.description{
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 30px;
+}
+.goHome{
+    background-color: #2196F3;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.goHomeLink{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.goHome:hover {
+    opacity: 0.8;
+}
+.sad{
+    font-size:70px;
+    font-weight: bolder;
+    color: #FF5722;
+}

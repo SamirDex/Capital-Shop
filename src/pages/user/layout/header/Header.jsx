@@ -19,13 +19,7 @@ function Header() {
                             <Link to="/" className={styles.headerLink}>Home</Link>
                         </li>
                         <li className={styles.headerItem}>  
-                            <Link to="/user" className={styles.headerLink}>Men</Link>
-                        </li>
-                        <li className={styles.headerItem}>  
-                            <Link to="/user" className={styles.headerLink}>Women</Link>
-                        </li>
-                        <li className={styles.headerItem}>  
-                            <Link to="/user" className={styles.headerLink}>Baby Collection</Link>
+                            <Link to="/products" className={styles.headerLink}>Products</Link>
                         </li>
                         <li className={styles.headerItem}>  
                             <Link to="/contact" className={styles.headerLink}>Contact</Link>

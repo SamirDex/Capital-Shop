@@ -28,7 +28,7 @@ function Slider() {
                             <span>Fashion Sale</span>
                             <h1>Minimal Menz Style</h1>
                             <p>Consectetur adipisicing elit. Laborum fuga incidunt laboriosam voluptas iure, delectus dignissimos facilis neque nulla earum.</p>
-                            <a href="">Shop Now</a>
+                            <a href="" className={styles.shop}>Shop Now</a>
 
                         </div>
                         <img src={hero1} alt="" />

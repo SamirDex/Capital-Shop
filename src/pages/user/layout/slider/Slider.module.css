@@ -41,13 +41,17 @@
     font-weight: 500;
     border: 1px solid #292621;
     text-transform: uppercase;
-    color: #fff !important;
+    color: #fff;
     display: inline-block;
     padding: 15px 47px;
     line-height: 16px;
     font-size: 14px;
     text-decoration: none;
-    
+    transition: all .3s linear;
+}
+.context1 a:hover{
+    background-color: transparent;
+    color: #292621;
 }
 .slide1{
     position: relative;
@@ -98,12 +102,18 @@
     font-weight: 500;
     border: 1px solid #292621;
     text-transform: uppercase;
-    color: #fff !important;
+    color: #fff;
     display: inline-block;
     padding: 15px 47px;
     line-height: 16px;
     font-size: 14px;
+    transition: all .3s linear;
     text-decoration: none;
+}
+
+.context2 a:hover{
+    background-color: transparent;
+    color: #292621;
 }
 
 .container{
