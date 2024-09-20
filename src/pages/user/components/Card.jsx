@@ -4,12 +4,14 @@ import { PiShoppingCartLight } from "react-icons/pi";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
-function Card({ name, price, withoutDiscount, img }) {
+function Card({ name, price, withoutDiscount, img,id }) {
+    const navigate = useNavigate(); 
     return (
         <div className={styles.Card}>
-            <Link className={styles.DetailLink}>
+            <Link className={styles.DetailLink} onClick={() => navigate("/detail/" +id )}>
                 <div className={styles.tools}>
                     <div className={styles.tool}>
                         <PiShoppingCartLight />

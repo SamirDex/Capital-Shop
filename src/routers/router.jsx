@@ -1,5 +1,6 @@
 // import AdminRoot from "../admin/adminRoot";
 import Contact from "../pages/contact/Contact";
+import Detail from "../pages/detail/Detail";
 import Home from "../pages/home/Home"; 
 import Login from "../pages/login/Login";
 import Nopage from "../pages/nopage/Nopage";
@@ -23,7 +24,11 @@ export const routes = [
             {
                 path: "/products",
                 element: <Products />
-            }
+            },
+            {
+                path: "/detail/:id",
+                element: <Detail />  
+            },
         ]
     },
     {
