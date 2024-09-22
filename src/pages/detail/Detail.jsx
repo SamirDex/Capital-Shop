@@ -48,8 +48,6 @@ function Detail() {
             ) : (
                 <p>Product not found</p>
             )}
-
-            
         </div>
     )
 }
