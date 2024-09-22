@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react' 
+import {useState, useEffect} from 'react' 
 import axios from 'axios';
 import { useParams } from 'react-router-dom'
 import { base_url } from "../../data/Data"
 import styles from "./Detail.module.css"
 import { Link } from 'react-router-dom';
+import { FaShareAlt } from "react-icons/fa";
 
 function Detail() {
     const { id } = useParams(); 
@@ -27,22 +28,28 @@ function Detail() {
                         <img src={product.img}/>
                     </div>
                     <div className={styles.content}>
-                        <div>
-                            <h1>{product.name.charAt(0).toUpperCase() + product.name.slice(1)}</h1>
+                        <div className={styles.header}> 
+                            <h3>{product.name.charAt(0).toUpperCase() + product.name.slice(1)}</h3>
                             <p>{product.category.charAt(0).toUpperCase() + product.category.slice(1)}</p>
                         </div>
-                        <div>
-                            <h1>{product.price}</h1>
-                            <span>{product.withoutDiscount}</span>
-                        </div>
-                        <div>
+                        <div className={styles.color}>
                             <span>Color: {product.color.charAt(0).toUpperCase() + product.color.slice(1)}</span>
+                        </div>
+                        <div className={styles.price}> 
+                            <h1>${product.price}</h1>
+                            <span>${product.withoutDiscount}</span>
+                        </div>
+                        <div className={styles.detailFooter}>
+                            <Link className={styles.addToCart}><span>Add To Cart</span></Link>
+                            <Link className={styles.share}><FaShareAlt /></Link>
                         </div>
                     </div>
                 </div>
             ) : (
                 <p>Product not found</p>
             )}
+
+            
         </div>
     )
 }
