@@ -1,15 +1,15 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import styles from "./Trend.module.css"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from '../../components/Card';
-import { data } from "../../../../data/Data"
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import { testimonials } from '../../../../data/Data';
+import {getAllproducts} from "../../../../middleware/products"
 
 const CustomLeftArrow = ({ onClick }) => {
     return (
@@ -47,6 +47,18 @@ const responsive = {
 
 
 function Trend() {
+
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        getAllproducts().then(res => {
+            setProducts(res)
+            console.log(res);
+        })
+        
+    }, []);
+
     const settings = {
         dots: true,
         infinite: true,
@@ -84,16 +96,15 @@ function Trend() {
             
             <div className={styles.cardContainer}>
                 <Carousel responsive={responsive} infinite={true} autoPlay={true} autoPlaySpeed={2000} pauseOnHover={true} customLeftArrow={<CustomLeftArrow />} customRightArrow={<CustomRightArrow />}>
-                    {data && data.map((item, i) => (
-                        item.category === "clothes" && (
-                            <Card
-                                key={i}
-                                name={item.name}
-                                img={item.img}
-                                price={item.price}
-                                withoutDiscount={item.withoutDiscount}
-                            />
-                        )
+                    {products && products.map((item) => (
+                        <Card
+                        key={item.id}
+                        id= {item.id}
+                        name={item.name}
+                        img={item.img}
+                        price={item.price}
+                        withoutDiscount={item.withoutDiscount}
+                        />
                     ))}
                 </Carousel>
             </div>

@@ -40,15 +40,16 @@ const responsive = {
         items: 1
     }
 };
-function MayLike() {
+function MayLike( {products} ) {
     return (
         <div className={styles.cardContainer}>
             <h1 className={styles.header}>You May Like</h1>
             <Carousel responsive={responsive} infinite={true} autoPlay={true} autoPlaySpeed={2000} pauseOnHover={true} customLeftArrow={<CustomLeftArrow />} customRightArrow={<CustomRightArrow />}>
-                {data && data.map((item, i) => (
+                {products && products.map((item) => (
                     item.category === "accessory" && (
                         <Card
-                            key={i}
+                            id={item.id}
+                            key={item.id}
                             name={item.name}
                             img={item.img}
                             price={item.price}

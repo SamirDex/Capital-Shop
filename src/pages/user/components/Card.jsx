@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from "./Card.module.css"
 import { PiShoppingCartLight } from "react-icons/pi";
 import { IoIosHeartEmpty } from "react-icons/io";
@@ -8,7 +7,11 @@ import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 function Card({ name, price, withoutDiscount, img,id }) {
+
+    console.log(id);
     const navigate = useNavigate(); 
+
+
     return (
         <div className={styles.Card}>
             <Link className={styles.DetailLink} onClick={() => navigate("/detail/" +id )}>

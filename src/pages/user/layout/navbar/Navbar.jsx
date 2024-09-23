@@ -29,7 +29,7 @@ function Navbar() {
                 </div>
                 <div className={styles.right}>
                     <div className={styles.wishlist}>
-                        <Link className={styles.navLink}>My Wishlist</Link>
+                        <Link className={styles.navLink} to='/wishlist'>My Wishlist</Link>
                     </div>
                     <div className={styles.order}>
                         <Link className={styles.navLink}>Track Your Order</Link>

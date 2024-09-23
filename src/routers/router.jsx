@@ -7,6 +7,7 @@ import Nopage from "../pages/nopage/Nopage";
 import Products from "../pages/products/Products";
 import Register from "../pages/register/Register";
 import UserRoot from "../pages/user/userRoot";
+import Wishlist from "../pages/wishlist/Wishlist";
 
 export const routes = [
     {
@@ -28,6 +29,10 @@ export const routes = [
             {
                 path: "/detail/:id",
                 element: <Detail />  
+            },
+            {
+                path: "/wishlist",
+                element: <Wishlist />  
             },
         ]
     },

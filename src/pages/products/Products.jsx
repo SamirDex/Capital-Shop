@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { base_url } from '../../data/Data';
 import Card from '../user/components/Card';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { getAllproducts } from "./../../middleware/products"; 
 
 const categories = [
     "men's clothing",
@@ -28,7 +29,9 @@ const colors = [
     "brown"
 ];
 
+
 function Products() {
+
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState({
         category: '',
@@ -50,7 +53,10 @@ function Products() {
     };
 
     useEffect(() => {
-        axios(`${base_url}products`).then(res => setProducts(res.data));
+        getAllproducts().then(res => {
+            // console.log(res);
+            setProducts(res)
+        })
     }, []);
 
     const filteredProducts = products.filter((prod) => {
