@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import styles from './Products.module.css';
 import { Link } from 'react-router-dom';
-import { base_url } from '../../data/Data';
 import Card from '../user/components/Card';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { getAllproducts } from "./../../middleware/products"; 
 
 const categories = [
+    "All",
     "men's clothing",
     "women's clothing",
     "baby's clothing",
     "accessory"
 ];
 const sizes = [
+    "All",
     "small",
     "medium",
     "large"
 ];
 const colors = [
+    "All",
     "multi-colored",
     "black",
     "green",
@@ -63,7 +64,8 @@ function Products() {
         const matchesCategory = selectedCategory.category ? prod.category === selectedCategory.category : true;
         const matchesSize = selectedCategory.size ? prod.size === selectedCategory.size : true;
         const matchesColor = selectedCategory.color ? prod.color === selectedCategory.color : true;
-
+        console.log(matchesCategory);
+         
         return matchesCategory && matchesSize && matchesColor;
     });
 
@@ -82,6 +84,7 @@ function Products() {
                     <div className={styles.content}>
                         <div className={styles.categories}>
                             {["category", "size", "color"].map((type, index) => (
+                                
                                 <div className={styles.category} key={index}>
                                     <div className={styles.dropdown} onClick={() => handleOpenCategory(type)}>
                                         <div className={styles.selected}>

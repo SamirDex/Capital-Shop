@@ -1,4 +1,3 @@
-// import AdminRoot from "../admin/adminRoot";
 import Contact from "../pages/contact/Contact";
 import Detail from "../pages/detail/Detail";
 import Home from "../pages/home/Home"; 

@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 // eslint-disable-next-line react/prop-types
 function Card({ name, price, withoutDiscount, img,id }) {
 
-    console.log(id);
+    // console.log(id);
     const navigate = useNavigate(); 
 
 

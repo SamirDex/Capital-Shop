@@ -5,8 +5,6 @@ import Header from '../layout/header/header'
 import Footer from '../layout/footer/Footer'
 
 function UserRoot() {
-   
-
     return (
         <div>
             <Navbar />
@@ -16,5 +14,4 @@ function UserRoot() {
         </div>
     )
 }
-
 export default UserRoot
