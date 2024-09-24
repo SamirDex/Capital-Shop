@@ -8,6 +8,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 
 function Navbar() {
+
     return (
         <>
             <div className={styles.container}>

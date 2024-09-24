@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from "./Header.module.css"
 import { Link } from 'react-router-dom'
 import logo from "../../../../images/logo.png"
 import { CiSearch } from "react-icons/ci";
 import { LuUser2 } from "react-icons/lu";
 import { SlBasket } from "react-icons/sl";
-
+import { LoginContext } from '../../../../App';
+import { IoIosLogOut } from "react-icons/io";
+import Tooltip from '../../components/Tooltip';
 function Header() {
+    const {isLogin, setIsLogin} = useContext(LoginContext); 
+
+    const handleLogin = () => {
+        setIsLogin(true)
+    }
+    const handleLogout = () => {
+        setIsLogin(false)
+    }
+
+
     return (
         <>
             <div className={styles.container}>
@@ -27,11 +39,20 @@ function Header() {
                     </ul>
                 </div>
                 <div className={styles.right}>
-                    <CiSearch className={styles.icon}/>
-                    <Link to="/login" className={styles.Linkicon}>
-                        <LuUser2 className={styles.icon}/>
+                    <Tooltip TooltipText="Search">
+                        <CiSearch className={styles.icon}/>
+                    </Tooltip>
+                    <Link to="/login" className={styles.Linkicon} onClick={isLogin ? handleLogout : handleLogin}>
+                        <Tooltip TooltipText={isLogin ? "Logout" : "Login" }>
+                        {
+                            isLogin ? (<IoIosLogOut className={styles.icon}/> ) : <LuUser2 className={styles.icon}/>
+                        }
+                        </Tooltip>
                     </Link>
-                    <SlBasket className={styles.icon}/>
+                    <Tooltip TooltipText="Basket">
+                        <SlBasket className={styles.icon}/>
+                    </Tooltip>
+                    
                 </div>
             </div>
             <div className={styles.discount}>

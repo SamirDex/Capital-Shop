@@ -34,40 +34,39 @@ const colors = [
 function Products() {
 
     const [products, setProducts] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState({
-        category: '',
-        color: '',
-        size: '',
+    const [filters, setFilters] = useState({
+        category: 'All',
+        color: 'All',
+        size: 'All',
     });
-    const [openCategory, setOpenCategory] = useState('');
+    const [openFilter, setOpenFilter] = useState('');
 
-    const handleOpenCategory = (type) => {
-        setOpenCategory((prev) => (prev === type ? '' : type));
+    const toggleFilterDropdown = (filterType) => {
+        setOpenFilter(prev => prev === filterType ? '' : filterType);
     };
 
-    const handleCategoryClick = (category, type) => {
-        setSelectedCategory((prev) => ({
+    const handleFilterChange = (value, filterType) => {
+        setFilters(prev => ({
             ...prev,
-            [type]: category,
+            [filterType]: value,
         }));
-        setOpenCategory('');
+        setOpenFilter('');
     };
 
     useEffect(() => {
         getAllproducts().then(res => {
-            // console.log(res);
-            setProducts(res)
-        })
+            setProducts(res);
+        });
     }, []);
 
-    const filteredProducts = products.filter((prod) => {
-        const matchesCategory = selectedCategory.category ? prod.category === selectedCategory.category : true;
-        const matchesSize = selectedCategory.size ? prod.size === selectedCategory.size : true;
-        const matchesColor = selectedCategory.color ? prod.color === selectedCategory.color : true;
-        console.log(matchesCategory);
-         
-        return matchesCategory && matchesSize && matchesColor;
+    const filteredProducts = products.filter((product) => {
+        const categoryMatch = filters.category === 'All' || product.category === filters.category;
+        const sizeMatch = filters.size === 'All' || product.size === filters.size;
+        const colorMatch = filters.color === 'All' || product.color === filters.color;
+
+        return categoryMatch && sizeMatch && colorMatch;
     });
+
 
     return (
         <div className={styles.container}>
@@ -83,28 +82,29 @@ function Products() {
                 <div className={styles.left}>
                     <div className={styles.content}>
                         <div className={styles.categories}>
-                            {["category", "size", "color"].map((type, index) => (
+                            {["category", "size", "color"].map((filterType, index) => (
                                 
                                 <div className={styles.category} key={index}>
-                                    <div className={styles.dropdown} onClick={() => handleOpenCategory(type)}>
+                                    <div className={styles.dropdown} onClick={() => toggleFilterDropdown(filterType)}>
                                         <div className={styles.selected}>
-                                            <span>{selectedCategory[type] || `Select ${type.charAt(0).toUpperCase() + type.slice(1)}`}</span>
-                                            <span className={`${styles.arrow} ${openCategory === type ? styles.open : ''}`}>
-                                                {openCategory === type ? <FaChevronUp style={{ color: "#bab9b5" }} /> : <FaChevronDown style={{ color: "#bab9b5" }} />}
+                                            <span>{filters[filterType] !== "All" ? filters[filterType] : `Select ${filterType.charAt(0).toUpperCase() + filterType.slice(1)}`}</span>
+                                            <span className={`${styles.arrow} ${openFilter === filterType ? styles.open : ''}`}>
+                                                {openFilter === filterType ? <FaChevronUp style={{ color: "#bab9b5" }} /> : <FaChevronDown style={{ color: "#bab9b5" }} />}
                                             </span>
                                         </div>
-                                        <ul className={`${styles.list} ${openCategory === type ? styles.open : ''}`}>
-                                            {(type === 'category' ? categories : type === 'size' ? sizes : colors).map((item, idx) => (
+                                        <ul className={`${styles.list} ${openFilter === filterType ? styles.open : ''}`}>
+                                            {(filterType === 'category' ? categories : filterType === 'size' ? sizes : colors).map((item, idx) => (
                                                 <li
-                                                    key={idx}
-                                                    onClick={() => {
-                                                        handleCategoryClick(item, type);
-                                                        handleOpenCategory(type);
-                                                    }}
-                                                    className={selectedCategory[type] === item ? "active" : ""}
-                                                >
-                                                    {item}
-                                                </li>
+                                                key={idx}
+                                                onClick={() => {
+                                                    handleFilterChange(item, filterType);
+                                                    toggleFilterDropdown(filterType); 
+                                                }}
+                                                className={filters[filterType] === item ? styles.active : ""}
+                                            >
+                                                {item}
+                                            </li>
+                                            
                                             ))}
                                         </ul>
                                     </div>
