@@ -10,6 +10,7 @@ import { LoginContext } from "../../App";
 
 function Login() {
     const { isLogin, setIsLogin } = useContext(LoginContext);
+    const {isAdmin, setIsAdmin } = useContext(LoginContext); 
 
     const handleLogout = () => {
         setIsLogin(!isLogin)
@@ -51,7 +52,10 @@ function Login() {
 
             if (user) {
                 setIsLogin(true);
-                console.log(user);
+                if(user.isAdmin){
+                    setIsAdmin(true); 
+                }
+                // console.log(user);
                 navigate('/'); 
             } else {
                 Swal.fire({

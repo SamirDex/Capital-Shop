@@ -54,6 +54,7 @@ function MayLike( {products} ) {
                             img={item.img}
                             price={item.price}
                             withoutDiscount={item.withoutDiscount}
+                            products ={products}
                         />
                     )
                 ))}

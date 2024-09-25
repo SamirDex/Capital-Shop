@@ -10,7 +10,8 @@ import { IoIosLogOut } from "react-icons/io";
 import Tooltip from '../../components/Tooltip';
 function Header() {
     const {isLogin, setIsLogin} = useContext(LoginContext); 
-
+    const {isAdmin, setIsAdmin } = useContext(LoginContext);
+     
     const handleLogin = () => {
         setIsLogin(true)
     }
@@ -36,6 +37,11 @@ function Header() {
                         <li className={styles.headerItem}>  
                             <Link to="/contact" className={styles.headerLink}>Contact</Link>
                         </li>
+                        {isAdmin ? (
+                            <li className={styles.headerItem}>  
+                                <Link to="/admin/dashboard" className={styles.headerLink}>Table</Link>
+                            </li>
+                        ): null}
                     </ul>
                 </div>
                 <div className={styles.right}>

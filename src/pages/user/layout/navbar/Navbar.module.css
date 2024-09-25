@@ -39,6 +39,7 @@
 }
 .social{
     padding: 0 15px;
+    display: flex;
 }
 .Social{
     margin-right: 15px;
@@ -51,5 +52,4 @@
 }
 .discount{
     height: 40px;
-    background-color: ;
 }

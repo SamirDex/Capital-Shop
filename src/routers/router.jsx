@@ -1,3 +1,5 @@
+import AdminRoot from "../pages/admin/adminRoot";
+import Dashboard from "../pages/admin/layout/Dashboard";
 import Contact from "../pages/contact/Contact";
 import Detail from "../pages/detail/Detail";
 import Home from "../pages/home/Home"; 
@@ -22,17 +24,27 @@ export const routes = [
                 element: <Contact />
             },
             {
-                path: "/products",
+                path: "/products", 
                 element: <Products />
             },
             {
-                path: "/detail/:id",
+                path: "/detail/:id", 
                 element: <Detail />  
             },
             {
                 path: "/wishlist",
                 element: <Wishlist />  
             },
+        ]
+    },
+    {
+        path: "/admin", 
+        element: <AdminRoot />,
+        children: [
+            {
+                path: "dashboard", 
+                element: <Dashboard />
+            }
         ]
     },
     {
@@ -47,4 +59,4 @@ export const routes = [
         path: "*",
         element: <Nopage />  
     },
-]
+];

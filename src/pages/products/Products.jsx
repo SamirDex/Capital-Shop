@@ -128,6 +128,7 @@ function Products() {
                                 img={prod.img}
                                 price={prod.price}
                                 withoutDiscount={prod.withoutDiscount}
+                                products ={products}
                             />
                         ))
                     ) : <p>No products found.</p>}
