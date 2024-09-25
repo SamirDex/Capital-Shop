@@ -1,16 +1,40 @@
 import styles from "./Card.module.css"
 import { PiShoppingCartLight } from "react-icons/pi";
-import { IoIosHeartEmpty } from "react-icons/io";
+import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
+import { useState, useEffect} from "react";
 // eslint-disable-next-line react/prop-types
-function Card({ name, price, withoutDiscount, img,id }) {
+function Card({ name, price, withoutDiscount, img,id, products }) {
+
+    const [move, setMove] = useState(true); 
+    const [isInWishlist, setIsInWishlist] = useState(false);
 
     // console.log(id);
     const navigate = useNavigate(); 
+    let wishlistArr =[]
 
+    useEffect(() => {
+        const wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
+        const inWishlist = wishlistArr.some((elem) => elem.id == id);
+        setIsInWishlist(inWishlist);
+    }, [id]); 
+    
+    const handleWishlistClick =(e) => {
+        e.stopPropagation();
+        let wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
+        const product = products.find((elem) => elem.id == id);
+
+        if (isInWishlist) {
+            wishlistArr = wishlistArr.filter((item) => item.id != id);
+        } else {
+            wishlistArr.push(product);
+        }
+
+        localStorage.setItem("wishlist", JSON.stringify(wishlistArr));
+        setIsInWishlist(!isInWishlist);
+    }
 
     return (
         <div className={styles.Card}>
@@ -19,8 +43,8 @@ function Card({ name, price, withoutDiscount, img,id }) {
                     <div className={styles.tool}>
                         <PiShoppingCartLight />
                     </div>
-                    <div className={styles.tool}>
-                        <IoIosHeartEmpty />
+                    <div className={styles.tool} onClick={handleWishlistClick}>
+                        {isInWishlist ? <IoIosHeart /> : <IoIosHeartEmpty/>}
                     </div>
                     <div className={styles.tool}>
                         <IoIosSearch />

@@ -14,7 +14,7 @@ function Home() {
     useEffect(() => {
         getAllproducts().then(res => {
             setProducts(res)
-            console.log(res);
+            // console.log(res);
         })
         
     }, []);
