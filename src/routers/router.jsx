@@ -1,5 +1,6 @@
 import AdminRoot from "../pages/admin/adminRoot";
 import Dashboard from "../pages/admin/layout/Dashboard";
+import Basket from "../pages/basket/Basket";
 import Contact from "../pages/contact/Contact";
 import Detail from "../pages/detail/Detail";
 import Home from "../pages/home/Home"; 
@@ -34,6 +35,10 @@ export const routes = [
             {
                 path: "/wishlist",
                 element: <Wishlist />  
+            },
+            {
+                path: "/basket",
+                element: <Basket />  
             },
         ]
     },

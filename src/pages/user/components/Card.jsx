@@ -1,25 +1,23 @@
-import styles from "./Card.module.css"
+import styles from "./Card.module.css";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect} from "react";
-// eslint-disable-next-line react/prop-types
-function Card({ name, price, withoutDiscount, img,id, products }) {
+import { useState, useEffect } from "react";
 
+// eslint-disable-next-line react/prop-types
+function Card({ name, price, withoutDiscount, img, id, products }) {
     const [isInWishlist, setIsInWishlist] = useState(false);
     const [isInCart, setIsInCart] = useState(false); 
 
     const navigate = useNavigate(); 
-    let wishlistArr =[]; 
-    let cartArr = []; 
 
     useEffect(() => {
         const wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
         const inWishlist = wishlistArr.some((elem) => elem.id == id);
-        const cartArr = JSON.parse(localStorage.getItem("cart")) || [];
-        const inCart = cartArr.some(elem=>elem.id == id ); 
+        const cartArr = JSON.parse(localStorage.getItem("basket")) || [];
+        const inCart = cartArr.some(elem => elem.id == id); 
         setIsInWishlist(inWishlist);
         setIsInCart(inCart); 
     }, [id]); 
@@ -27,7 +25,7 @@ function Card({ name, price, withoutDiscount, img,id, products }) {
     const handleWishlistClick = (e) => {
         e.stopPropagation();
 
-        wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
+        const wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
         const product = products.find((elem) => elem.id == id);
 
         if (isInWishlist) {
@@ -42,35 +40,36 @@ function Card({ name, price, withoutDiscount, img,id, products }) {
 
     const handleCartClick = (e) => {
         e.stopPropagation(); 
-
-        cartArr = JSON.parse(localStorage.getItem("cart")); 
+        const cartArr = JSON.parse(localStorage.getItem("basket")) || []; 
         const product = products.find(elem => elem.id == id); 
-        if(isInCart) {
-            cartArr = cartArr.filter(elem => elem.id != id);
+
+        const existingProduct = cartArr.find(elem => elem.id == id);
+        if (existingProduct) {
+            existingProduct.count += 1;
+        } else {
+            cartArr.push({ ...product, count: 1 }); 
         }
-        else{
-            cartArr.push(product); 
-        }
-        localStorage.setItem("cart", JSON.stringify(cartArr)); 
-        setIsInCart(!isInCart); 
+        
+        localStorage.setItem("basket", JSON.stringify(cartArr)); 
+        setIsInCart(true); 
     }
 
     return (
         <div className={styles.Card}>
-            <Link className={styles.DetailLink} onClick={() => navigate("/detail/" +id )}>
+            <Link className={styles.DetailLink} onClick={() => navigate("/detail/" + id)}>
                 <div className={styles.tools}>
                     <div className={styles.tool} onClick={handleCartClick}>
-                        <PiShoppingCartLight/>
+                        <PiShoppingCartLight />
                     </div>
                     <div className={styles.tool} onClick={handleWishlistClick}>
-                        {isInWishlist ? <IoIosHeart /> : <IoIosHeartEmpty/>}
+                        {isInWishlist ? <IoIosHeart /> : <IoIosHeartEmpty />}
                     </div>
                     <div className={styles.tool}>
                         <IoIosSearch />
                     </div>
                 </div>
                 <div className={styles.cardName}>
-                    <img src={img} alt=""  className={styles.cardImage}/>
+                    <img src={img} alt="" className={styles.cardImage} />
                 </div>
                 <div className={styles.CardBody}>
                     <a href="" className={styles.CardLink}>{name}</a>
@@ -81,7 +80,7 @@ function Card({ name, price, withoutDiscount, img,id, products }) {
                 </div>
             </Link>
         </div>
-    )
+    );
 }
 
-export default Card
+export default Card;

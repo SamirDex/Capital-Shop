@@ -56,7 +56,7 @@ function Header() {
                         </Tooltip>
                     </Link>
                     <Tooltip TooltipText="Basket">
-                        <SlBasket className={styles.icon}/>
+                        <Link to="/basket" className={styles.Linkicon}><SlBasket className={styles.icon}/></Link>
                     </Tooltip>
                     
                 </div>

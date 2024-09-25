@@ -1,0 +1,123 @@
+.container{
+    width: 100%;
+}
+.header{
+    width: 100%;
+    background-color: #f3ebd8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 150px;
+}
+.header h1{
+    color: #292621;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.link{
+    color: #74706B;
+    font-size: 14px;
+    text-transform: capitalize;
+    line-height: 1;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 0 .5rem;
+    border: none;
+}
+.hr {
+    width: 1px; 
+    height: 20px; 
+    font-weight: 600;
+    border: none;
+    border-left: 1px solid #74706B; 
+    transform: rotate(0deg); 
+}
+.links{
+    display: flex;
+}
+.basket{
+    margin: 3rem 0;
+    padding: 0 5rem ;
+}
+.tableContainer {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tableContainer table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.thead {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.thead th {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.quantity {
+    display: flex;
+    align-items: stretch; 
+    gap: 0;
+    border-radius: 4px;
+}
+
+.quantity input {
+    width: 70px;
+    text-align: center;
+    outline: none;
+    border: 1px solid #ddd; 
+    padding: 0;
+    height: 40px;
+}
+
+.quantity div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40px; 
+    cursor: pointer;
+    border-color: #ddd #ddd #ddd transparent; 
+    border-width: 1px;
+    border-style: solid;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+
+.quantity .buttons:first-child {
+    border-bottom: none; 
+}
+.quantity .buttons:last-child {
+    border-top: none; 
+}
+
+.quantity div:hover {
+    background-color: #ddd;
+}
+
+.quantity div:active {
+    background-color: #ccc; 
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column ;
+}
