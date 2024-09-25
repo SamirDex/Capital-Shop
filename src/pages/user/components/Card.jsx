@@ -8,22 +8,26 @@ import { useState, useEffect} from "react";
 // eslint-disable-next-line react/prop-types
 function Card({ name, price, withoutDiscount, img,id, products }) {
 
-    const [move, setMove] = useState(true); 
     const [isInWishlist, setIsInWishlist] = useState(false);
+    const [isInCart, setIsInCart] = useState(false); 
 
-    // console.log(id);
     const navigate = useNavigate(); 
-    let wishlistArr =[]
+    let wishlistArr =[]; 
+    let cartArr = []; 
 
     useEffect(() => {
         const wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
         const inWishlist = wishlistArr.some((elem) => elem.id == id);
+        const cartArr = JSON.parse(localStorage.getItem("cart")) || [];
+        const inCart = cartArr.some(elem=>elem.id == id ); 
         setIsInWishlist(inWishlist);
+        setIsInCart(inCart); 
     }, [id]); 
     
-    const handleWishlistClick =(e) => {
+    const handleWishlistClick = (e) => {
         e.stopPropagation();
-        let wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+        wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
         const product = products.find((elem) => elem.id == id);
 
         if (isInWishlist) {
@@ -34,14 +38,29 @@ function Card({ name, price, withoutDiscount, img,id, products }) {
 
         localStorage.setItem("wishlist", JSON.stringify(wishlistArr));
         setIsInWishlist(!isInWishlist);
+    };
+
+    const handleCartClick = (e) => {
+        e.stopPropagation(); 
+
+        cartArr = JSON.parse(localStorage.getItem("cart")); 
+        const product = products.find(elem => elem.id == id); 
+        if(isInCart) {
+            cartArr = cartArr.filter(elem => elem.id != id);
+        }
+        else{
+            cartArr.push(product); 
+        }
+        localStorage.setItem("cart", JSON.stringify(cartArr)); 
+        setIsInCart(!isInCart); 
     }
 
     return (
         <div className={styles.Card}>
             <Link className={styles.DetailLink} onClick={() => navigate("/detail/" +id )}>
                 <div className={styles.tools}>
-                    <div className={styles.tool}>
-                        <PiShoppingCartLight />
+                    <div className={styles.tool} onClick={handleCartClick}>
+                        <PiShoppingCartLight/>
                     </div>
                     <div className={styles.tool} onClick={handleWishlistClick}>
                         {isInWishlist ? <IoIosHeart /> : <IoIosHeartEmpty/>}
@@ -54,7 +73,7 @@ function Card({ name, price, withoutDiscount, img,id, products }) {
                     <img src={img} alt=""  className={styles.cardImage}/>
                 </div>
                 <div className={styles.CardBody}>
-                    <a href='' className={styles.CardLink}>{name}</a>
+                    <a href="" className={styles.CardLink}>{name}</a>
                     <div className={styles.price}>
                         <div className={styles.with}>${price} </div>
                         <div className={styles.without}>${withoutDiscount}</div>
