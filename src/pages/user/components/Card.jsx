@@ -25,7 +25,7 @@ function Card({ name, price, withoutDiscount, img, id, products }) {
     const handleWishlistClick = (e) => {
         e.stopPropagation();
 
-        const wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
+        let wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
         const product = products.find((elem) => elem.id == id);
 
         if (isInWishlist) {
