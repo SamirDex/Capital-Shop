@@ -39,6 +39,7 @@ function Card({ name, price, withoutDiscount, img, id, products }) {
     };
 
     const handleCartClick = (e) => {
+        e.preventDefault(); 
         e.stopPropagation(); 
         const cartArr = JSON.parse(localStorage.getItem("basket")) || []; 
         const product = products.find(elem => elem.id == id); 
