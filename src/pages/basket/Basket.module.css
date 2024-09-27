@@ -139,3 +139,14 @@
 .subtotal span{
     margin-left: 10rem;
 }
+.delete{
+    text-align: center;
+    margin-left: 1.5rem;
+    font-size: 24px;
+    cursor: pointer;
+    color: #292621;
+    transition: all .3s linear;
+}
+.delete:hover{
+    color: #FF2020;
+}

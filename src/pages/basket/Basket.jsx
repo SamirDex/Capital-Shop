@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from "./Basket.module.css";
 import { Link } from 'react-router-dom'; 
 import { FaPlus, FaMinus } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 import {
     Table,
     Thead,
@@ -89,6 +90,7 @@ function Basket() {
                                 <Th>Price</Th>
                                 <Th isNumeric>Quantity</Th>
                                 <Th isNumeric>Total</Th>
+                                <Th>Delete</Th>
                             </Tr>
                         </Thead>
                         <Tbody className={styles.tbody}>
@@ -111,10 +113,11 @@ function Basket() {
                                             </div> 
                                         </Td>
                                         <Td isNumeric>
-                                            <div style={{width: "5rem"}}>
+                                            <div style={{width: "5rem", textAlign:"center"}}>
                                                 ${((quantities[product.id] || product.count) * product.price).toFixed(2)}
                                             </div>
                                         </Td>
+                                        <Td>< MdDelete className={styles.delete}/></Td>
                                     </Tr>
                                 );
                             })}
