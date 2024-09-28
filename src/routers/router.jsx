@@ -5,6 +5,7 @@ import Contact from "../pages/contact/Contact";
 import Detail from "../pages/detail/Detail";
 import Home from "../pages/home/Home"; 
 import Login from "../pages/login/Login";
+import Logout from "../pages/logout/Logout";
 import Nopage from "../pages/nopage/Nopage";
 import Products from "../pages/products/Products";
 import Register from "../pages/register/Register";
@@ -55,6 +56,10 @@ export const routes = [
     {
         path: "/login",
         element: <Login />  
+    },
+    {
+        path: "/logout",
+        element: <Logout />  
     },
     {
         path: "/register",

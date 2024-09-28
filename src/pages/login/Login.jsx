@@ -70,19 +70,10 @@ function Login() {
     return (
         <div className={styles.container}>
             <div className={styles.box}>
-                {isLogin ? (
-                    <div className={styles.header}>
-                        <h1>Login</h1>
-                        <p>Enter Login details to get access</p>
-                    </div>
-                ) : (
-                    
                     <div className={styles.header}>
                         <h1>Logout</h1>
                         <p>You are already logged in.</p>
                     </div>
-                )}
-                {isLogin ? (
                     <div className={styles.form}>
                         <form onSubmit={formik.handleSubmit}>
                             <div className={styles.row}>
@@ -134,13 +125,6 @@ function Login() {
                             </div>
                         </form>
                     </div>
-                ) : (
-                    <div className={styles.logout}>
-                        <Link to="/" className={styles.logoutLink}>Home</Link>
-                        <Link to="/products" className={styles.logoutLink}>Products</Link>
-                        <Link className={styles.logoutLink} onClick={handleLogout} to="/login">Logout</Link>
-                    </div>
-                )}
             </div>
         </div>
     );

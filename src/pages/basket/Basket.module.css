@@ -73,62 +73,64 @@
     padding-bottom: 30px;
 }
 .productName{
-    border-left: 3px solid #eeeeee;
     border-radius: 3px;
     padding-left: 30px;
 }
 
-.quantity {
-    display: flex;
-    align-items: stretch; 
-    gap: 0;
+.count {
+    display: flex; 
+    align-items: stretch;
+    gap: 0; 
     border-radius: 4px;
+    width: 5rem;
+}
+
+.quantity {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center; 
 }
 
 .quantity input {
-    width: 70px;
+    width: 60px;
     text-align: center;
     outline: none;
-    border: 1px solid #ddd; 
-    padding: 0;
-    height: 40px;
+    border: 1px solid #eeeeee;
+    height: 50px;
+    font-size: 16px;
+    border-right: none;
 }
 
-.quantity div {
+.buttons {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    width: 40px; 
-    cursor: pointer;
-    border-color: #ddd #ddd #ddd transparent; 
-    border-width: 1px;
-    border-style: solid;
+}
+
+.increment, .decrement {
+    padding: 0 10px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer; 
+    border: 1px solid #eeeeee;
     transition: background-color 0.3s ease;
     font-size: 18px;
-
+    height:25px;
+}
+.increment{
+    border-bottom: none;
 }
 
-.quantity .buttons:first-child {
-    border-bottom: none; 
-}
-.quantity .buttons:last-child {
-    border-top: none; 
+.increment:hover, .decrement:hover {
+    background-color: #f0f0f0;
 }
 
-.quantity div:active {
-    background-color: #ccc; 
-}
-
-.buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction:column ;
+.increment:active, .decrement:active {
+    background-color: #ccc;
 }
 
 .subtotal{
-    margin: 30px;
+    margin: 30px 0;
     border-bottom: 1px solid #eeeeee;
     border-radius: 3px;
     display: flex;
@@ -149,4 +151,65 @@
 }
 .delete:hover{
     color: #FF2020;
+}
+.Buttons {
+    display: flex;
+    gap: 1rem; 
+    position: relative; 
+}
+
+.goToMenu, .Checkout {
+    background-color: #FF2020;
+    position: relative; 
+    padding: 12px 32px;
+    border-radius: 35px;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #fff; 
+    text-decoration: none; 
+    overflow: hidden; 
+    cursor: pointer; 
+    border: none; 
+}
+
+.goToMenu::before, .Checkout::before {
+    content: "";
+    position: absolute; 
+    top: 0; 
+    left: -100%;
+    width: 100%;
+    height: 100%; 
+    background: #cf0f0f;
+    transition: left 0.3s ease;
+    z-index: 0; 
+}
+
+.goToMenu:hover::before, .Checkout:hover::before {
+    animation: slideIn 0.5s forwards; 
+}
+
+@keyframes slideIn {
+    0% {
+        left: -100%;
+    }
+    40% {
+        left: 0;
+    }
+    60% {
+        left: -15%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.goToMenu span, .Checkout span {
+    position: relative; 
+    z-index: 1; 
+}
+.productImage{
+    width: 4rem;
+}
+.productImage img{
+    width: 4rem;
 }

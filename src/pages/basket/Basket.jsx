@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styles from "./Basket.module.css";
 import { Link } from 'react-router-dom'; 
-import { FaPlus, FaMinus } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 import { MdDelete } from "react-icons/md";
+import { GoPlus } from "react-icons/go";
+import { FiMinus } from "react-icons/fi";
+import { style } from 'framer-motion/client';
+
 import {
     Table,
     Thead,
@@ -14,6 +18,7 @@ import {
 } from '@chakra-ui/react';
 
 function Basket() {
+    const navigate = useNavigate();
     const [basketArr, setBasketArr] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0); 
     const [quantities, setQuantities] = useState({}); 
@@ -30,17 +35,27 @@ function Basket() {
         setQuantities(prev => {
             const newQty = (prev[id] || 1) - 1;
             if (newQty <= 0) {
-                const updatedBasket = basketArr.filter(product => product.id !== id);
-                setBasketArr(updatedBasket);
-                localStorage.setItem("basket", JSON.stringify(updatedBasket));
-                delete prev[id];
-                return { ...prev };
+                handleDelete(id);
+                return prev;
             }
 
             updateBasketInLocalStorage(id, newQty);
             return { ...prev, [id]: newQty };
         });
     };
+
+    const handleDelete = (id) => {
+        const updatedBasket = basketArr.filter(item => item.id !== id); 
+        setBasketArr(updatedBasket); 
+        localStorage.setItem("basket", JSON.stringify(updatedBasket)); 
+
+        setQuantities(prev => {
+            const updatedQuantites = {...prev}; 
+            delete updatedQuantites[id]; 
+            return updatedQuantites; 
+        }) 
+    }
+
     const updateBasketInLocalStorage = (id, newQty) => {
         const updatedBasket = basketArr.map(product => 
             product.id === id ? { ...product, count: newQty } : product
@@ -84,6 +99,7 @@ function Basket() {
                     <Table variant='simple' className={styles.table}>
                         <Thead className={styles.thead}>
                             <Tr>
+                                <Th>Image</Th>
                                 <Th>Product</Th>
                                 <Th>Size</Th>
                                 <Th>Color</Th>
@@ -97,27 +113,32 @@ function Basket() {
                             {basketArr && basketArr.map(product => {
                                 return (
                                     <Tr className={styles.tr} key={product.id}>
+                                        <Td className={styles.productImage}>
+                                            <Link onClick={() => navigate("/detail/" + product.id)}><img src={product.img} alt="" /></Link>
+                                        </Td>
                                         <Td><div className={styles.productName}>{product.name}</div></Td>
                                         <Td>{product.size}</Td>
                                         <Td>{product.color}</Td>
                                         <Td>${product.price}</Td>
                                         <Td isNumeric className={styles.quantity}>
-                                            <input type="text" value={quantities[product.id] || product.count} readOnly />
-                                            <div className={styles.buttons}>
-                                                <div onClick={() => handleDecrement(product.id)}>
-                                                    <FaMinus />
+                                            <div className={styles.count}>
+                                                <input type="text" value={quantities[product.id] || product.count} readOnly />
+                                                <div className={styles.buttons}>
+                                                    <div className={`${styles.increment}`} onClick={() => handleIncrement(product.id)}>
+                                                        <GoPlus />
+                                                    </div>
+                                                    <div className={`${styles.decrement}`} onClick={() => handleDecrement(product.id)}>
+                                                        <FiMinus />
+                                                    </div>
                                                 </div>
-                                                <div onClick={() => handleIncrement(product.id)}>
-                                                    <FaPlus />
-                                                </div>
-                                            </div> 
+                                            </div>
                                         </Td>
                                         <Td isNumeric>
                                             <div style={{width: "5rem", textAlign:"center"}}>
                                                 ${((quantities[product.id] || product.count) * product.price).toFixed(2)}
                                             </div>
                                         </Td>
-                                        <Td>< MdDelete className={styles.delete}/></Td>
+                                        <Td>< MdDelete className={styles.delete} onClick={() => handleDelete(product.id)}/></Td>
                                     </Tr>
                                 );
                             })}
@@ -131,8 +152,8 @@ function Basket() {
                 </div>
 
                 <div className={styles.Buttons}>
-                    <Link>Continue Shopping</Link>
-                    <Link></Link>
+                    <Link className={styles.goToMenu} to="/products"><span>Continue Shopping</span></Link>
+                    <Link className={styles.Checkout}><span>Proceed to checkout</span></Link>
                 </div>
             </div> 
 

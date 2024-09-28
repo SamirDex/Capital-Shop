@@ -48,7 +48,7 @@ function Header() {
                     <Tooltip TooltipText="Search">
                         <CiSearch className={styles.icon}/>
                     </Tooltip>
-                    <Link to="/login" className={styles.Linkicon} onClick={isLogin ? handleLogout : handleLogin}>
+                    <Link to={isLogin ? "/logout" : "login"} className={styles.Linkicon} >
                         <Tooltip TooltipText={isLogin ? "Logout" : "Login" }>
                         {
                             isLogin ? (<IoIosLogOut className={styles.icon}/> ) : <LuUser2 className={styles.icon}/>
