@@ -8,7 +8,6 @@ import { useEffect, useContext } from "react";
 import { LoginContext } from "../../../App";
 
 
-// eslint-disable-next-line react/prop-types
 function Card({ name, price, withoutDiscount, img, id, products }) {
     
     const {isInWishlist, setIsInWishlist} = useContext(LoginContext);
@@ -19,20 +18,23 @@ function Card({ name, price, withoutDiscount, img, id, products }) {
     useEffect(() => {
         const wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
         const inWishlist = wishlistArr.some((elem) => elem.id == id);
+
         const cartArr = JSON.parse(localStorage.getItem("basket")) || [];
         const inCart = cartArr.some(elem => elem.id == id); 
+        
         setIsInWishlist(inWishlist);
         setIsInCart(inCart); 
     }, [id]); 
     
     const handleWishlistClick = (e) => {
         e.stopPropagation();
+        e.preventDefault(); 
 
         let wishlistArr = JSON.parse(localStorage.getItem("wishlist")) || [];
         const product = products.find((elem) => elem.id == id);
 
         if (isInWishlist) {
-            wishlistArr = wishlistArr.filter((item) => item.id != id);
+            wishlistArr = wishlistArr.filter((item) => item.id !== id);
         } else {
             wishlistArr.push(product);
         }
