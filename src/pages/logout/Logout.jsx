@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
 import styles from "./Logout.module.css"
 import { LoginContext } from "../../App";
-import { div } from 'framer-motion/client';
 
 function Logout() {
     const { isLogin, setIsLogin } = useContext(LoginContext);

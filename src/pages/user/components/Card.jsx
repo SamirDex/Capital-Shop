@@ -4,12 +4,15 @@ import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { LoginContext } from "../../../App";
+
 
 // eslint-disable-next-line react/prop-types
 function Card({ name, price, withoutDiscount, img, id, products }) {
-    const [isInWishlist, setIsInWishlist] = useState(false);
-    const [isInCart, setIsInCart] = useState(false); 
+    
+    const {isInWishlist, setIsInWishlist} = useContext(LoginContext);
+    const {isInCart, setIsInCart} = useContext(LoginContext);
 
     const navigate = useNavigate(); 
 
