@@ -61,6 +61,7 @@
     background-color: #fff; 
     z-index: -1; 
     transition: background 0.3s linear;
+    animation: backgroundBack 0.5s forwards;
 }
 
 .logoutLink:hover {
@@ -84,5 +85,19 @@
     }
     100% {
         left: 0;
+    }
+}
+@keyframes backgroundBack {
+    0% {
+        left: 0;
+    }
+    40% {
+        left: -100%;
+    }
+    60% {
+        left: -85%;
+    }
+    100% {
+        left: -100%;
     }
 }

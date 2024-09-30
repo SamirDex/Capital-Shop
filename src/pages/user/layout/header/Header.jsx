@@ -24,7 +24,8 @@ function Header() {
         <>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <img src={logo} alt="" />
+                    <Link to='/'><img src={logo} alt="" /></Link>
+                    
                 </div>
                 <div className={styles.middle}>
                     <ul className={styles.header}>

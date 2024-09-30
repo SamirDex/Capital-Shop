@@ -6,6 +6,7 @@ import { FaShareAlt } from "react-icons/fa";
 import { base_url } from "../../data/Data";
 import styles from "./Detail.module.css";
 import { LoginContext } from '../../App';
+import { FaTrash } from "react-icons/fa";
 
 function Detail() {
     const { id } = useParams(); 

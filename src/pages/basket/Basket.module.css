@@ -182,6 +182,7 @@
     background: #cf0f0f;
     transition: left 0.3s ease;
     z-index: 0; 
+    animation: slideOut 0.5s forwards; 
 }
 
 .goToMenu:hover::before, .Checkout:hover::before {
@@ -200,6 +201,21 @@
     }
     100% {
         left: 0;
+    }
+}
+
+@keyframes slideOut{
+    0% {
+        left: 0;
+    }
+    40% {
+        left: -100%;
+    }
+    60% {
+        left: -85%;
+    }
+    100% {
+        left: -100%;
     }
 }
 

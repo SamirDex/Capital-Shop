@@ -4,14 +4,13 @@ import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useContext } from "react";
-import { LoginContext } from "../../../App";
-
+import { useEffect, useState } from "react";
 
 function Card({ name, price, withoutDiscount, img, id, products }) {
     
-    const {isInWishlist, setIsInWishlist} = useContext(LoginContext);
-    const {isInCart, setIsInCart} = useContext(LoginContext);
+    // Yerel state kullanarak her ürün için ayrı wishlist ve cart durumu
+    const [isInWishlist, setIsInWishlist] = useState(false);
+    const [isInCart, setIsInCart] = useState(false);
 
     const navigate = useNavigate(); 
 
