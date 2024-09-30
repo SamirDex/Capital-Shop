@@ -1,5 +1,14 @@
 .dashboardContainer{
-    width: 100%;
+    max-width: 100%;
     padding: 0 3.5rem;
     margin: 3rem 0;
+    overflow-x: auto;
+}
+Td img {
+    width: 100px;
+    height: auto;
+}
+.dashboardContainer Th, Td{
+    text-align: left;  
+    white-space: nowrap;
 }

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import styles from "./Dashboard.module.css"
 import { ChakraProvider } from '@chakra-ui/react'
 import { getAllproducts } from "./../../../middleware/products"; 
-
+import { Link, useNavigate } from 'react-router-dom';
 import {
     Table,
     Thead,
@@ -16,6 +16,7 @@ import {
 
 function Dashboard() {
     const [products, setProducts] = useState([]);
+    const navigate = useNavigate(); 
 
     useEffect(() => {
         getAllproducts().then(res => {
@@ -32,14 +33,17 @@ function Dashboard() {
                     <Table variant='simple'>
                         <Thead>
                             <Tr>
-                                <Th>#</Th>
-                                <Th>Name</Th>
-                                <Th>Category</Th>
-                                <Th>Size</Th>
-                                <Th>Color</Th>
-                                <Th isNumeric>Price</Th>
-                                <Th isNumeric>Regular Price</Th>
-                                <Th isNumeric>Discount</Th>
+                                <Th width="10%">#</Th>
+                                <Th width="100%">Image</Th>
+                                <Th width="20%">Name</Th>
+                                <Th width="15%">Category</Th>
+                                <Th width="10%">Size</Th>
+                                <Th width="10%">Color</Th>
+                                <Th isNumeric width="10%">Price</Th>
+                                <Th isNumeric width="15%">Regular Price</Th>
+                                <Th isNumeric width="10%">Discount</Th>
+                                <Th isNumeric width="10%">Discount</Th>
+                                <Th isNumeric width="10%">Discount</Th>
                             </Tr>
                         </Thead>
                         <Tbody>
@@ -48,6 +52,7 @@ function Dashboard() {
                                     return (
                                         <Tr key={product.id}>
                                             <Td>{product.id}</Td>
+                                            <Td><Link onClick={() => navigate("/detail/" + product.id)}><img src={product.img} alt="" /></Link></Td>
                                             <Td>{product.name}</Td>
                                             <Td>{product.category}</Td>
                                             <Td>{product.size ? product.size : ""}</Td>

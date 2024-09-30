@@ -53,10 +53,14 @@ function Login() {
             if (user) {
                 setIsLogin(true);
                 if(user.isAdmin){
-                    setIsAdmin(true); 
+                    setIsAdmin(true);
+                    navigate('/admin'); 
+                }
+                else{
+                    navigate('/');
                 }
                 // console.log(user);
-                navigate('/'); 
+                 
             } else {
                 Swal.fire({
                     icon: "error",
