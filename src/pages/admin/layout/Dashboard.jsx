@@ -3,6 +3,8 @@ import styles from "./Dashboard.module.css"
 import { ChakraProvider } from '@chakra-ui/react'
 import { getAllproducts } from "./../../../middleware/products"; 
 import { Link, useNavigate } from 'react-router-dom';
+import { MdDelete } from "react-icons/md";
+import { FaRegEdit } from "react-icons/fa";
 import {
     Table,
     Thead,
@@ -32,18 +34,16 @@ function Dashboard() {
                 <TableContainer style={{maxWidth:"100%"}}>
                     <Table variant='simple'>
                         <Thead>
-                            <Tr>
-                                <Th width="10%">#</Th>
-                                <Th width="100%">Image</Th>
-                                <Th width="20%">Name</Th>
-                                <Th width="15%">Category</Th>
-                                <Th width="10%">Size</Th>
-                                <Th width="10%">Color</Th>
-                                <Th isNumeric width="10%">Price</Th>
-                                <Th isNumeric width="15%">Regular Price</Th>
-                                <Th isNumeric width="10%">Discount</Th>
-                                <Th isNumeric width="10%">Discount</Th>
-                                <Th isNumeric width="10%">Discount</Th>
+                            <Tr className={styles.dashboardTr}>
+                                <Th width="5%">#</Th>
+                                <Th width="10%">Image</Th>
+                                <Th width="15%">Name</Th>
+                                <Th width="10%">Category</Th>
+                                <Th  width="10%">Price</Th>
+                                <Th  width="10%">Regular Price</Th>
+                                <Th  width="5%">Discount</Th>
+                                <Th  width="2%">Delete</Th>
+                                <Th  width="2%">Edit</Th>
                             </Tr>
                         </Thead>
                         <Tbody>
@@ -55,11 +55,11 @@ function Dashboard() {
                                             <Td><Link onClick={() => navigate("/detail/" + product.id)}><img src={product.img} alt="" /></Link></Td>
                                             <Td>{product.name}</Td>
                                             <Td>{product.category}</Td>
-                                            <Td>{product.size ? product.size : ""}</Td>
-                                            <Td>{product.color}</Td>
-                                            <Td isNumeric>${product.price}</Td>
-                                            <Td isNumeric>${product.withoutDiscount}</Td>
-                                            <Td isNumeric>-{((product.withoutDiscount - product.price) / product.withoutDiscount * 100).toFixed(0)}%</Td>
+                                            <Td >${product.price}</Td>
+                                            <Td >${product.withoutDiscount}</Td>
+                                            <Td >-{((product.withoutDiscount - product.price) / product.withoutDiscount * 100).toFixed(0)}%</Td>
+                                            <Td ><MdDelete className={`${styles.dashboardIcon} ${styles.delete}`}/></Td>
+                                            <Td><FaRegEdit className={`${styles.dashboardIcon} ${styles.edit}`} /></Td>
                                         </Tr>
                                     )
                                 })

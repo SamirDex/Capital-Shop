@@ -1,14 +1,39 @@
 .dashboardContainer{
     max-width: 100%;
-    padding: 0 3.5rem;
+    padding: 0 3rem;
     margin: 3rem 0;
     overflow-x: auto;
+    table-layout: fixed;
+}
+.dashboardContainer Table{
+    
 }
 Td img {
-    width: 100px;
+    width: 40px;
     height: auto;
 }
 .dashboardContainer Th, Td{
     text-align: left;  
     white-space: nowrap;
+}
+.dashboardTr{
+    width: 100%;
+    object-fit: cont;
+}
+.dashboardIcon{
+    margin: 0 auto;
+    font-size: 24px;
+    cursor: pointer;
+}
+.delete{
+    transition: all .3s linear;
+}
+.edit{
+    transition: all .3s linear;
+}
+.delete:hover{
+    color: #ff1f1f;
+}
+.edit:hover{
+    color: #7CB9E8;
 }

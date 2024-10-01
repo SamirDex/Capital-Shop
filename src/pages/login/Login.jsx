@@ -54,7 +54,7 @@ function Login() {
                 setIsLogin(true);
                 if(user.isAdmin){
                     setIsAdmin(true);
-                    navigate('/admin'); 
+                    navigate('/admin/dashboard'); 
                 }
                 else{
                     navigate('/');
